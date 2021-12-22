@@ -10,7 +10,7 @@ The result is the number of distinct users, in the file and date specified.
 Docker image of the app can be pulled using: `docker pull devops336/dau`  
 or built runnig the command `docker build -t <image_name> .`  
    
-#### Before using the container  
+#### Before running the container  
 The app reads files places in a directory named "resources" (which you need to add yourself).  
 This directory must be created in the same directory the `docker run` command is executed.  
 After creating the resources directory, add TXT or CSV file to directory.  
