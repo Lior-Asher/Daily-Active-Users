@@ -19,5 +19,4 @@ The file content should be in a table, consisting of two columns, where the left
 #### Running the container  
 In the same directory as "resources" directory, using the terminal run the command:  
 `docker run --rm -v "${PWD}:/app/resources" <image_name>:<tag> <file_to_process> <date>`  
-  
-The result is a message stating the number of DAUs in the specified file at the specified date.
+- Windows users: the run command works only with powershell, it will not work with the command line (CMD) 
