@@ -7,7 +7,7 @@ Add files to the folder, in the format of two columns, the left is a user id, th
 To run: `java -jar <jar_name> <file_name> <date>`  
 The result is the number of distinct users, in the file and date specified.      
 ### Docker image  
-Docker image of the app can be pulled using: `docker pull devops336/dau`  
+Docker image of the app can be pulled using: `docker pull devops336/dau:1.0`  
 or built runnig the command `docker build -t <image_name> .`  
    
 #### Before running the container  
@@ -18,6 +18,6 @@ The file content should be in a table, consisting of two columns, where the left
   
 #### Running the container  
 In the same directory as "resources" directory, using the terminal run the command:  
-`docker run --rm -v "${PWD}:/app/resources" <image_name> <file_to_process> <date>`  
+`docker run --rm -v "${PWD}:/app/resources" <image_name>:<tag> <file_to_process> <date>`  
   
 The result is a message stating the number of DAUs in the specified file at the specified date.
