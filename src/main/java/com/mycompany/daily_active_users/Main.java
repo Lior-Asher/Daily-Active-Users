@@ -13,7 +13,8 @@ public class Main {
         if (args.length > 0) {
             String fileName = args[0];
             String date = args[1];
-            String resourcesDir = "\\resources\\";
+
+            String resourcesDir = "//resources//";
             String projDir = System.getProperty("user.dir");
 
             // when reading specific file
@@ -27,8 +28,7 @@ public class Main {
             } catch (Exception e) {
                 System.out.println("Error Exception: " + e.getMessage());
             }
-        }
-        else {
+        } else {
             System.out.println("Need arguments:\n1) file name\n2) date");
         }
     }
