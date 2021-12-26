@@ -7,12 +7,11 @@ Add files to the folder, in the format of two columns, the left is a user id, th
 To run: `java -jar <jar_name> <file_name> <date>`  
 The result is the number of distinct users, in the file and date specified.      
 ### Docker image  
-Docker image of the app can be pulled from Docker-Hub: `docker pull devops336/dau:1.0`  
+Docker image of the app can be pulled from Docker-Hub: `docker pull devops336/dau:1.1`  
 Or built runnig the command `docker build -t <image_name> .`  
    
 #### Before running the container  
-The app reads files places in a directory named "resources" (which you need to add yourself).  
-This directory must be created in the same directory the `docker run` command is executed.  
+Copy "resources" directory to the same directory the `docker run` command is executed.  
 After creating the resources directory, add TXT or CSV file to directory.  
 The file content should be in a table, consisting of two columns, where the left column is an ID and the right column is date.  
   

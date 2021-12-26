@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import org.apache.maven.surefire.shared.lang3.math.NumberUtils;
 
 public class DAU {
 
@@ -47,7 +48,13 @@ public class DAU {
         HashSet<Integer> _IDs = new HashSet<>();
         _usersAtDate = new HashMap<>();
 
-        for (int i = 0; i < parsedData.size() - 1; i++) {
+        int i = 0;
+        // check if the first line is header
+        // if not, start reading the file from the second row.
+        if(!NumberUtils.isParsable(parsedData.get(i)[0]))
+            i = 1;
+        
+        for (; i < parsedData.size() - 1; i++) {
 
             // Compare current date to the next date.
             // As long as the dates are equal - ad ids to the current date set of users.

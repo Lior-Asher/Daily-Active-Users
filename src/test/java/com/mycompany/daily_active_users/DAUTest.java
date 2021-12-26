@@ -17,12 +17,13 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class DAUTest {
-    
+
     public DAUTest() {
     }
 
     /**
      * Test of getDAUCount method, of class DAU.
+     *
      * @throws java.io.IOException
      */
     @Test
@@ -41,7 +42,48 @@ public class DAUTest {
     }
 
     /**
+     * Test of testGetDAUCountWHeaders method, of class DAU.
+     *
+     * @throws java.io.IOException
+     */
+    @Test
+    public void testGetDAUCountWHeaders() throws IOException {
+        System.out.println("testGetDAUCountWHeaders");
+        String fileName = "input_headers.txt";
+        String date = "1/1/2020";
+        String resourcesDir = "\\resources\\";
+        String projDir = System.getProperty("user.dir");
+        String fullPath = projDir + resourcesDir + fileName;
+        File fin = new File(fullPath);
+        DAU instance = new DAU(fin);
+        int expResult = 3;
+        int result = instance.getDAUCount(date);
+        assertEquals(expResult, result);
+    }
+    
+    /**
+     * Test of testGetDAUCountWHeaders method, of class DAU.
+     *
+     * @throws java.io.IOException
+     */
+    @Test
+    public void testGetDAUCountWHeadersCSV() throws IOException {
+        System.out.println("testGetDAUCountWHeadersCSV");
+        String fileName = "tinput_headers.csv";
+        String date = "1/1/2020";
+        String resourcesDir = "\\resources\\";
+        String projDir = System.getProperty("user.dir");
+        String fullPath = projDir + resourcesDir + fileName;
+        File fin = new File(fullPath);
+        DAU instance = new DAU(fin);
+        int expResult = 3;
+        int result = instance.getDAUCount(date);
+        assertEquals(expResult, result);
+    }
+    
+    /**
      * Test of getAllItems method, of class DAU.
+     *
      * @throws java.io.IOException
      */
     @Test
@@ -58,24 +100,24 @@ public class DAUTest {
         HashSet<Integer> s = new HashSet<>(Arrays.asList(123));
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         String date = "01/01/2020";
-        LocalDate localDate = LocalDate.parse(date, dateFormatter);        
-        
+        LocalDate localDate = LocalDate.parse(date, dateFormatter);
+
         // 02/01/2020
         HashSet<Integer> s2 = new HashSet<>(Arrays.asList(789, 456));
         DateTimeFormatter dateFormatter2 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         String date2 = "02/01/2020";
-        LocalDate localDate2 = LocalDate.parse(date2, dateFormatter2);   
-        
+        LocalDate localDate2 = LocalDate.parse(date2, dateFormatter2);
+
         // 03/02/2020
         HashSet<Integer> s3 = new HashSet<>(Arrays.asList(789, 456, 123));
         DateTimeFormatter dateFormatter3 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         String date3 = "03/01/2020";
-        LocalDate localDate3 = LocalDate.parse(date3, dateFormatter3);   
-        
+        LocalDate localDate3 = LocalDate.parse(date3, dateFormatter3);
+
         expResult.put(localDate3, s);
         expResult.put(localDate2, s2);
         expResult.put(localDate, s3);
-        
+
         HashMap<LocalDate, HashSet<Integer>> result = instance.getAllItems();
         System.out.println(instance.toString());
         assertEquals(expResult, result);
