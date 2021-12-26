@@ -2,8 +2,8 @@
 Count distinct Daily Active Users from a file stream.  
 Only TXT and CSV files are supported.  
 ### Running the app  
-Create a folder called "resources" in the same folder as the jar file. The jar file is in "target" folder.  
-Add files to the folder, in the format of two columns, the left is a user id, the right is a date of the format dd/MM/yyyy.  
+Copy "resources" folder to the same folder as the jar file. The jar file is in "target" folder.  
+Optional: Add new files to resources folder, in the same format as the example files.  
 To run: `java -jar <jar_name> <file_name> <date>`  
 The result is the number of distinct users, in the file and date specified.      
 ### Docker image  
