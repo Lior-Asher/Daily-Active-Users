@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 // Strategy implementation for CSV files.
-public class ParseCSV implements ParseDataStrategy{
+public class StreamReaderCSV implements ParseDataStrategy{
 
     // CSV specific parsing method. Split lines words on comma and space.
     @Override

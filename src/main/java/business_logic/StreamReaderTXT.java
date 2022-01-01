@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 // Strategy implementation for TXT files.
-public class ParseTXT implements ParseDataStrategy {
+public class StreamReaderTXT implements ParseDataStrategy {
 
     // TXT specific parsing method. Split line words on spaces.
     @Override

@@ -5,7 +5,7 @@
  */
 package com.mycompany.daily_active_users;
 
-import business_logic.DAU;
+import business_logic.DAUOperations;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -22,7 +22,7 @@ public class DAUTest {
     }
 
     /**
-     * Test of getDAUCount method, of class DAU.
+     * Test of getDAUCount method, of class DAUOperations.
      *
      * @throws java.io.IOException
      */
@@ -35,14 +35,14 @@ public class DAUTest {
         String fullPath = projDir + resourcesDir + fileName;
         String date = "01/01/2020";
         File fin = new File(fullPath);
-        DAU instance = new DAU(fin);
+        DAUOperations instance = new DAUOperations(fin);
         int expResult = 3;
         int result = instance.getDAUCount(date);
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of testGetDAUCountWHeaders method, of class DAU.
+     * Test of testGetDAUCountWHeaders method, of class DAUOperations.
      *
      * @throws java.io.IOException
      */
@@ -55,14 +55,14 @@ public class DAUTest {
         String projDir = System.getProperty("user.dir");
         String fullPath = projDir + resourcesDir + fileName;
         File fin = new File(fullPath);
-        DAU instance = new DAU(fin);
+        DAUOperations instance = new DAUOperations(fin);
         int expResult = 3;
         int result = instance.getDAUCount(date);
         assertEquals(expResult, result);
     }
     
     /**
-     * Test of testGetDAUCountWHeaders method, of class DAU.
+     * Test of testGetDAUCountWHeaders method, of class DAUOperations.
      *
      * @throws java.io.IOException
      */
@@ -75,14 +75,14 @@ public class DAUTest {
         String projDir = System.getProperty("user.dir");
         String fullPath = projDir + resourcesDir + fileName;
         File fin = new File(fullPath);
-        DAU instance = new DAU(fin);
+        DAUOperations instance = new DAUOperations(fin);
         int expResult = 3;
         int result = instance.getDAUCount(date);
         assertEquals(expResult, result);
     }
     
     /**
-     * Test of getAllItems method, of class DAU.
+     * Test of getAllItems method, of class DAUOperations.
      *
      * @throws java.io.IOException
      */
@@ -94,7 +94,7 @@ public class DAUTest {
         String projDir = System.getProperty("user.dir");
         String fullPath = projDir + resourcesDir + fileName;
         File fin = new File(fullPath);
-        DAU instance = new DAU(fin);
+        DAUOperations instance = new DAUOperations(fin);
         HashMap<LocalDate, HashSet<Integer>> expResult = new HashMap<>();
         // 01/01/2020
         HashSet<Integer> s = new HashSet<>(Arrays.asList(123));

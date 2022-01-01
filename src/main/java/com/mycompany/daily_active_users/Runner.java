@@ -1,6 +1,6 @@
 package com.mycompany.daily_active_users;
 
-import business_logic.DAU;
+import business_logic.DAUOperations;
 import java.io.File;
 import java.io.IOException;
 import validators.Validation;
@@ -8,15 +8,15 @@ import validators.Validation;
 // Wrapper class to prevent interaction with the classes that do the work directly.
 public class Runner {
 
-    // Return DAU count by providing filepath and a date to check and calling DAU object to do the work.
+    // Return DAUOperations count by providing filepath and a date to check and calling DAUOperations object to do the work.
     public static int getDAUCount(File filePath, String date) throws Exception {
         
         if (Validation.isValidDate(date)) {
             
-            DAU dau;
+            DAUOperations dau;
             if (Validation.isValidFile(filePath)) {
                 
-                dau = new DAU(filePath);
+                dau = new DAUOperations(filePath);
 
                 return dau.getDAUCount(date);
                 

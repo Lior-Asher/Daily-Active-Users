@@ -5,10 +5,10 @@ import java.io.IOException;
 import java.util.List;
 
 // Main class to select the right data processing strategy.
-public class ParseDataContext {
+public class StreamReaderDataContext {
     private final ParseDataStrategy _strategy;    
     
-    public ParseDataContext(ParseDataStrategy strategy) {
+    public StreamReaderDataContext(ParseDataStrategy strategy) {
         _strategy = strategy;
     }
     
