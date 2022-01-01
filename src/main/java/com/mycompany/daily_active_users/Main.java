@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.text.MessageFormat;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Main {
 
@@ -20,6 +22,7 @@ public class Main {
         String filename3 = "tinput_headers.csv";
         String date = "01/01/2020";//args[1];
         String date2 = "1/1/2020";
+        String date3 = "2020/1/1";
 
         String resourcesDir = "//resources//";
         String projDir = System.getProperty("user.dir");
@@ -27,12 +30,13 @@ public class Main {
         // when reading specific file
         String fullPath = projDir + resourcesDir + filename2;
         InputStreamHandler handler = new InputStreamHandler(new File(fullPath));
-        List<UserEntries> entries = handler.getEntries();
+        List<UserEntries> entries = handler.getAllEntries();
         DAUOperations ops = new DAUOperations(entries);
-        System.out.println(ops.toString());
-        System.out.println(MessageFormat.format("Distinct users count for the {0}: {1}", date2, ops.getDAUCount(date2)));
-
-        
+//        System.out.println(ops.toString());
+        try {
+            System.out.println(MessageFormat.format("Distinct users count for the {0}: {1}", date, ops.getDAUCount(date)));
+            
+//        System.out.println(entries.size());
 //        entries.forEach(entry -> {
 //            System.out.println(entry.toString());
 //        });
@@ -47,5 +51,8 @@ public class Main {
 //        } else {
 //            System.out.println("Need arguments:\n1) file name\n2) date");
 //        }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 }

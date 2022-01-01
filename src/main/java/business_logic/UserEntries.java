@@ -1,10 +1,12 @@
 package business_logic;
 
+import java.time.LocalDate;
+
 public class UserEntries {
-    private String _userID;
-    private String _loginTime;
+    private final String _userID;
+    private final LocalDate _loginTime;
     
-    public UserEntries(String userID, String loginTime) {
+    public UserEntries(String userID, LocalDate loginTime) {
         _userID = userID;
         _loginTime = loginTime;
     }
@@ -13,7 +15,7 @@ public class UserEntries {
         return _userID;
     }
     
-    public String getLoginTime() {
+    public LocalDate getLoginTime() {
         return _loginTime;
     }
     

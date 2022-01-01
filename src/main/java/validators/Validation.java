@@ -1,6 +1,7 @@
 package validators;
 
 import java.io.File;
+import java.time.LocalDate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -21,14 +22,12 @@ public class Validation {
     }
 
     // Check the provided date is one of the accepted formats.
-    public static boolean isValidDate(String date) {
+    public static boolean isValidDate(LocalDate date) {
+        Pattern pattern1 = Pattern.compile("^\\d{1,2}/\\d{1,2}/\\d{4}$");
+        Pattern pattern3 = Pattern.compile("^\\d{4}-\\d{1,2}-\\d{1,2}$");
+        Matcher match1 = pattern1.matcher(date.toString());
+        Matcher match3 = pattern3.matcher(date.toString());
         
-        // accepted date format examples: 02/01/2020 or 2/1/2020
-        Pattern pattern1 = Pattern.compile("^\\d{2}/\\d{2}/\\d{4}$");
-        Pattern pattern2 = Pattern.compile("^\\d{1}/\\d{1}/\\d{4}$");
-        Matcher match1 = pattern1.matcher(date);
-        Matcher match2 = pattern2.matcher(date);
-        
-        return (match1.find() || match2.find());
+        return (match1.find() || match3.find());
     }
 }
