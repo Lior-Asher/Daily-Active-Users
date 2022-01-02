@@ -53,6 +53,8 @@ public class InputStreamHandler {
                 System.out.println("ERROR: " + ex.getMessage());
             }
         } catch (FileNotFoundException ex) {
+            System.out.println("ERROR: File not found. " + ex.getMessage());
+        } catch (Exception ex) {
             System.out.println("ERROR: " + ex.getMessage());
         }
     }

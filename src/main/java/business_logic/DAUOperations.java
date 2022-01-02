@@ -2,11 +2,9 @@ package business_logic;
 
 import java.text.MessageFormat;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import validators.Validation;
 
 public class DAUOperations {
 
@@ -17,10 +15,10 @@ public class DAUOperations {
     public DAUOperations(List<UserEntry> userEntries) {
         _userEntries = userEntries;
         _usersAtDate = new HashMap<>();
-        distinctUsersAtDate();
+        mapUserEntriesToDates();
     }
 
-    private void distinctUsersAtDate() {
+    private void mapUserEntriesToDates() {
         for (UserEntry _userEntry : _userEntries) {
             // if the date is already in the map add the id
             // else, create Map entry and add the id
@@ -36,18 +34,12 @@ public class DAUOperations {
         }
     }
 
-    // Returns the number of daily unique users by date
-    public int getDAUCountAtDate(String date) throws Exception {
-        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("[dd/MM/yyyy][d/M/yyyy]");
-        LocalDate localDate = LocalDate.parse(date, dateFormatter);
-
-        if (Validation.isValidDate(localDate)) {
-            if (_usersAtDate.get(localDate) != null) {
-                return _usersAtDate.get(localDate).size();
-            }
-            throw new Exception(MessageFormat.format("ERROR: No date for {0}", localDate));
+    // Return the number of unique users by date
+    public int getDAUCountAtDate(LocalDate localDate) throws Exception {
+        if (_usersAtDate.get(localDate) != null) {
+            return _usersAtDate.get(localDate).size();
         }
-        throw new Exception("ERROR: Wrong date format!");
+        throw new Exception(MessageFormat.format("ERROR: No data for date {0}", localDate));
     }
 
     @Override

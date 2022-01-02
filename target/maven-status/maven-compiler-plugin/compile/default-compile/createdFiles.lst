@@ -1,8 +1,3 @@
-business_logic\DAU.class
-business_logic\ParseTXT.class
-business_logic\ParseCSV.class
 com\mycompany\daily_active_users\Main.class
-interfaces\ParseDataStrategy.class
-business_logic\ParseDataContext.class
 com\mycompany\daily_active_users\Runner.class
 validators\Validation.class

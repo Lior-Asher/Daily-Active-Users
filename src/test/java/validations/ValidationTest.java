@@ -13,9 +13,6 @@ public class ValidationTest {
     public ValidationTest() {
     }
 
-    /**
-     * Test of isValidFile method, of class Validation.
-     */
     @org.junit.Test
     public void testIsValidFile() {
         System.out.println("isValidFile");
