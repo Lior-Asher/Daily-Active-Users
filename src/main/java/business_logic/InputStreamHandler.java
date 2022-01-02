@@ -13,9 +13,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+// Class to handle inputstream
 public class InputStreamHandler {
 
-    private List<UserEntries> _userEntries;
+    private List<UserEntry> _userEntries;
     private final File _in;
 
     public InputStreamHandler(File in) {
@@ -24,11 +25,11 @@ public class InputStreamHandler {
         readInputStream(_in);
     }
 
-    public List<UserEntries> getAllEntries() {
+    public List<UserEntry> getAllEntries() {
         return _userEntries;
     }
 
-    // Process a single file into a list of UserEntries.
+    // Process a single file into a list of UserEntry.
     private void readInputStream(File in) {
         InputStream inputStream;
         try {
@@ -36,14 +37,15 @@ public class InputStreamHandler {
 
             // read the file
             try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+                // accepted date formats
                 DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("[dd/MM/yyyy][d/M/yyyy]");
-                
+
                 String headers;
                 // check the stream is not null or is empty
                 if ((headers = reader.readLine()) != null) {
                     if (headers.length() > 0) {
                         _userEntries = reader.lines().map(line -> line.split(",|\\s+"))
-                                .map(entry -> new UserEntries(entry[0], LocalDate.parse(entry[1], dateFormatter)))
+                                .map(entry -> new UserEntry(entry[0], LocalDate.parse(entry[1], dateFormatter), entry[2] ))
                                 .collect(Collectors.toList());
                     }
                 }

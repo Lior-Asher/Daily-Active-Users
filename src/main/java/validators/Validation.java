@@ -2,6 +2,7 @@ package validators;
 
 import java.io.File;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -23,6 +24,7 @@ public class Validation {
 
     // Check the provided date is one of the accepted formats.
     public static boolean isValidDate(LocalDate date) {
+        
         Pattern pattern1 = Pattern.compile("^\\d{1,2}/\\d{1,2}/\\d{4}$");
         Pattern pattern3 = Pattern.compile("^\\d{4}-\\d{1,2}-\\d{1,2}$");
         Matcher match1 = pattern1.matcher(date.toString());
