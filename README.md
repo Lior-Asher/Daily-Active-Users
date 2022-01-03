@@ -8,7 +8,7 @@ To run: `java -jar <jar_name> <file_name> <date>`
 The result is the number of distinct users, in the file and date specified.      
 ### Docker image  
 Docker image of the app can be pulled from Docker-Hub: `docker pull devops336/dau:1.2`  
-Or built runnig the command `docker build -t <image_name> .`  
+Or build runnig the command `docker build -t <image_name> .`  
    
 #### Before running the container  
 Copy "resources" directory to the same directory the `docker run` command is executed.  
