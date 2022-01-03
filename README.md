@@ -7,7 +7,7 @@ Optional: Add new files to resources folder, in the same format as the example f
 To run: `java -jar <jar_name> <file_name> <date>`  
 The result is the number of distinct users, in the file and date specified.      
 ### Docker image  
-Docker image of the app can be pulled from Docker-Hub: `docker pull devops336/dau:1.1`  
+Docker image of the app can be pulled from Docker-Hub: `docker pull devops336/dau:1.2`  
 Or built runnig the command `docker build -t <image_name> .`  
    
 #### Before running the container  
