@@ -24,14 +24,12 @@ public class Runner {
         InputStreamHandler handler = new InputStreamHandler(new File(fullPath));
         List<UserEntry> entries = handler.getAllEntries();
         DAUOperations dauOps = new DAUOperations(entries);
-        System.out.println(dauOps.toString()); //DEBUG
 
         if (Validation.isValidDate(date)) {
 
             DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("[dd/MM/yyyy][d/M/yyyy]");
             LocalDate localDate = LocalDate.parse(date, dateFormatter);
 
-//        if (Validation.isValidDate(localDate)) {
             if (Validation.isValidFile(fullPath)) {
                 return dauOps.getDAUCountAtDate(localDate);
             } else if (Validation.isDirectory(fullPath)) {
@@ -40,7 +38,6 @@ public class Runner {
                 System.out.println("Invalid file path or invalid file: " + fullPath);
             }
         }
-//        throw new Exception(MessageFormat.format("ERROR: Wrong date format for date {0}!", localDate));
         throw new Exception(MessageFormat.format("ERROR: Wrong date format for date {0}!", date));
     }
 }
