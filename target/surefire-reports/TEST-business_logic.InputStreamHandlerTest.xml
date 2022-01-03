@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="com.mycompany.daily_active_users.RunnerTest" time="0.015" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="business_logic.InputStreamHandlerTest" time="0.039" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="16.0.1+9-24"/>
@@ -59,9 +59,5 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.mycompany.daily_active_users.RunnerTest" name="testGetDAUCountAtDateCorrectRes2" time="0.001"/>
-  <testcase classname="com.mycompany.daily_active_users.RunnerTest" name="testGetDAUCountAtDateWrongDateFormat" time="0.001"/>
-  <testcase classname="com.mycompany.daily_active_users.RunnerTest" name="testGetDAUCountAtDateWrongRes" time="0.007"/>
-  <testcase classname="com.mycompany.daily_active_users.RunnerTest" name="testGetDAUCountAtDateWrongDateFormat2" time="0.005"/>
-  <testcase classname="com.mycompany.daily_active_users.RunnerTest" name="testGetDAUCountAtDateCorrectRes" time="0.001"/>
+  <testcase classname="business_logic.InputStreamHandlerTest" name="testGetAllEntries" time="0.039"/>
 </testsuite>
